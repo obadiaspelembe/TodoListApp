@@ -2,6 +2,9 @@ import { Reducer } from 'redux';
 
 import { TodosState, TodoTypes } from '../../actions/todos/todos.types';
 
+/**
+ * Estado inicial do reducer Todo
+ */
 const INITIAL_STATE: TodosState = {
     data: [],
     error: false,
@@ -9,6 +12,11 @@ const INITIAL_STATE: TodosState = {
 }
 
 
+/**
+ * Configurar o estado  reducer com o tipo TodosState 
+ * @param state 
+ * @param action 
+ */
 const todoReducer: Reducer<TodosState> = (state = INITIAL_STATE, action) => {
 
     switch (action.type) {
