@@ -7,7 +7,9 @@ import { Todo } from '../../../redux/actions/todos/todos.types';
 interface Props {
     todo: Todo
 }
-
+/**
+ * List item para renderizar cada componente da Lista de todo
+ */
 export default function ListItem(props: Props) {
 
     const { todo } = props;

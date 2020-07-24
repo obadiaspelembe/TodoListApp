@@ -28,7 +28,7 @@ A pasta do src obedece a seguinte estrutura:
         + sagas       - onde estao armazenados os ficheiros de middleware
         + store       - onde faz-se a integracao de todos os componentes acima
     _api.ts           - inicializacao do fetch para requests http
-    _index.tsx        - Principal Stack View
+    App.tsx        - Principal App View
 
 ### Regras de criacao de ficheiros
 
