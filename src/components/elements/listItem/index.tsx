@@ -1,7 +1,7 @@
 import React from 'react';
 import { TouchableHighlight, View, Text } from 'react-native'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-
+import styled from './index.css';
 import { Todo } from '../../../redux/actions/todos/todos.types';
 
 interface Props {
@@ -17,20 +17,15 @@ export default function ListItem(props: Props) {
     return (
         <TouchableHighlight
             underlayColor={'#eee'}
-            style={
-                {
-                    paddingTop: 6,
-                    paddingBottom: 6,
-                    borderBottomWidth: 1,
-                    borderColor: '#eee',
-                    margin: 10
-                }}>
-            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            style={styled.item_container}>
+            <View style={styled.item_body}>
                 <MaterialIcons
                     name={icon_name}
                     size={24}
                 />
-                <Text style={{ marginLeft: 5, fontSize: 18, color: color, textDecorationLine: textDecorationLine }}>{todo.title}</Text>
+                <Text style={
+                    [styled.item_text,
+                    { color: color, textDecorationLine: textDecorationLine }]}>{todo.title}</Text>
             </View>
         </TouchableHighlight>
     )
