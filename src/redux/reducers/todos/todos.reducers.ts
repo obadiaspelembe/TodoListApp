@@ -3,9 +3,7 @@ import { Reducer } from 'redux';
 import { TodosState, TodoTypes } from '../../actions/todos/todos.types';
 
 const INITIAL_STATE: TodosState = {
-    data: [
-        { id: 1, completed: false, title: 'Hello World', userId: 1 }
-    ],
+    data: [],
     error: false,
     loading: false
 }

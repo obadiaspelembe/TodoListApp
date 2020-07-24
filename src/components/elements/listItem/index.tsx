@@ -11,7 +11,7 @@ interface Props {
 export default function ListItem(props: Props) {
 
     const { todo } = props;
-    const color = todo.completed ? '#C5C8C9' : '#000';
+    const color = todo.completed ? '#a3e3dc' : '#004d44';
     const textDecorationLine = todo.completed ? 'line-through' : 'none';
     const icon_name = todo.completed ? 'check-box' : 'check-box-outline-blank';
     return (

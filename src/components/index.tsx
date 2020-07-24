@@ -1,9 +1,9 @@
 import React from 'react'
-import { Text, View, TouchableOpacity } from 'react-native'
+import { Text, View, TouchableOpacity, FlatList } from 'react-native'
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { ApplicationState } from '../redux/store/index';
-
+import styles from './index.css';
 import { Todo } from '../redux/actions/todos/todos.types';
 import * as TodoActions from '../redux/actions/todos/todos.actions';
 import ListItem from './elements/listItem/index';
@@ -23,20 +23,27 @@ const Root = (props: Props) => {
     const { loadRequest } = props;
 
     return (
-        <View>
-            <Text>Todo List</Text>
-            <TouchableOpacity
+        <View style={styles.container}>
+            <Text style={styles.title}>Todo List</Text>
+            <View style={styles.actionView}>
+                <TouchableOpacity
+                    onPress={() => loadRequest()}
+                    style={styles.button}>
+                    <Text style={styles.button_text}>Próximo</Text>
+                </TouchableOpacity>
+            </View>
 
-                onPress={() => loadRequest()}
-                style={{
-                    backgroundColor: "#949858",
-                    padding: 10,
-                    margin: 10
-                }}>
-                <Text>Click </Text>
-            </TouchableOpacity>
-            {todos.map(todo => <ListItem key={todo.id} todo={todo} />)}
-        </View>
+            <View style={{
+                margin: 10,
+                alignItems:"center"
+            }}>
+                <Text style={styles.title}>My Tasks</Text>
+
+                <FlatList data={todos}
+                    renderItem={({ item }) => <ListItem key={String(item.id)} todo={item} />}
+                />
+            </View>
+        </View >
     )
 }
 
