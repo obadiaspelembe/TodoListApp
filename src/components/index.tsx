@@ -6,7 +6,7 @@ import { ApplicationState } from '../redux/store/index';
 
 import { Todo } from '../redux/actions/todos/todos.types';
 import * as TodoActions from '../redux/actions/todos/todos.actions';
-
+import ListItem from './elements/listItem/index';
 interface StateProps {
     todos: Todo[]
 }
@@ -25,17 +25,17 @@ const Root = (props: Props) => {
     return (
         <View>
             <Text>Todo List</Text>
-            <TouchableOpacity 
+            <TouchableOpacity
 
                 onPress={() => loadRequest()}
-            style={{
-                backgroundColor: "#949858",
-                padding: 10,
-                margin: 10
-            }}>
+                style={{
+                    backgroundColor: "#949858",
+                    padding: 10,
+                    margin: 10
+                }}>
                 <Text>Click </Text>
             </TouchableOpacity>
-            {todos.map(todo => <Text key={todo.id}>{todo.title}</Text>)}
+            {todos.map(todo => <ListItem key={todo.id} todo={todo} />)}
         </View>
     )
 }
