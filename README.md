@@ -83,3 +83,6 @@ Terminal 2:
 
 Terminal 3:
 > npm run android
+
+## Visualizacao
+![Alt Text](https://drive.google.com/file/d/1oOTpQijAre1zdMnvFNVmZKUGRQTmX0ms/view?usp=sharing)
