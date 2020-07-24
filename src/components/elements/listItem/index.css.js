@@ -12,7 +12,7 @@ const styled = {
         flexDirection: 'row',
         alignItems: 'center'
     },
-    item_text: { marginLeft: 5, fontSize: 18 }
+    item_text: { marginLeft: 5, fontSize: 20 }
 };
 
 const styles = StyleSheet.create(styled);

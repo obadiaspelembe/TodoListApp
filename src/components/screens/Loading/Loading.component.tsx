@@ -21,8 +21,8 @@ const LoadingComponent = (props: any) => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Loading</Text>
-            <Text style={styles.button_text}>Please wait...</Text>
+            <Text style={styles.title}>A Carregar</Text>
+            <Text style={styles.button_text}>Por favor aguarde...</Text>
         </View>
     )
 }
