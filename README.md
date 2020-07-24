@@ -85,4 +85,4 @@ Terminal 3:
 > npm run android
 
 ## Visualizacao
-![Alt Text](https://doc-00-0o-docs.googleusercontent.com/docs/securesc/es84ubtde4c6c5293qcbirhl79evvjh8/q0qo0h0k78lq63hnq4v083nfhn55amqc/1595611425000/11695320718862852803/04320773971691542218Z/1oOTpQijAre1zdMnvFNVmZKUGRQTmX0ms?e=download&nonce=a8pajkoghbqra&user=04320773971691542218Z&hash=1820tf3ktslblf4cq0kcdj6t76u9qgdl)
+![Alt Text](https://drive.google.com/uc?export=view&id=1oOTpQijAre1zdMnvFNVmZKUGRQTmX0ms)
