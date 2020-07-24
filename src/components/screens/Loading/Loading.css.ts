@@ -14,12 +14,6 @@ const styled = {
         paddingVertical: 15,
         flexDirection: 'row'
     },
-    button: {
-        backgroundColor: "#04b3a1",
-        paddingVertical: 12,
-        paddingHorizontal: 130,
-        margin: 10
-    },
     button_text: {
         color: "#3f756f", fontSize: 19, margin: 10
     }

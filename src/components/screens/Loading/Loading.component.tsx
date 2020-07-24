@@ -11,10 +11,9 @@ const LoadingComponent = (props: any) => {
     const isLoading = () => {
 
         if (loading) {
-
             setTimeout(function () { 
                 props.navigation.navigate("Todos");
-             }, 3000);
+             }, 2000);
         }
     }
 
