@@ -1,58 +1,26 @@
 import React from 'react'
-import { Text, View, TouchableOpacity, FlatList } from 'react-native'
-import { connect } from 'react-redux';
-import { bindActionCreators, Dispatch } from 'redux';
-import { ApplicationState } from '../redux/store/index';
-import styles from './index.css';
-import { Todo } from '../redux/actions/todos/todos.types';
-import * as TodoActions from '../redux/actions/todos/todos.actions';
-import ListItem from './elements/listItem/index';
-interface StateProps {
-    todos: Todo[]
-}
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-interface DispatchProps {
-    loadRequest(): void
-}
+import HomeComponent from './screens/Home/Home.compoent';
+import TodosComponent from './screens/Todos/Todos.component';
+import LoadingComponent from './screens/Loading/Loading.component';
 
-type Props = StateProps & DispatchProps;
+interface RouteProps { }
 
-const Root = (props: Props) => {
+const Stack = createStackNavigator();
 
-    const { todos } = props;
-    const { loadRequest } = props;
-
+const Root: React.FC<RouteProps> = ({ }) => {
     return (
-        <View style={styles.container}>
-            <Text style={styles.title}>Todo List</Text>
-            <View style={styles.actionView}>
-                <TouchableOpacity
-                    onPress={() => loadRequest()}
-                    style={styles.button}>
-                    <Text style={styles.button_text}>Próximo</Text>
-                </TouchableOpacity>
-            </View>
-
-            <View style={{
-                margin: 10,
-                alignItems:"center"
-            }}>
-                <Text style={styles.title}>My Tasks</Text>
-
-                <FlatList data={todos}
-                    renderItem={({ item }) => <ListItem key={String(item.id)} todo={item} />}
-                />
-            </View>
-        </View >
-    )
-}
+        <NavigationContainer>
+            <Stack.Navigator initialRouteName="Home" headerMode="none">
+                <Stack.Screen name="Home" component={HomeComponent} />
+                <Stack.Screen name="Todos" component={TodosComponent} />
+                <Stack.Screen name="Loading" component={LoadingComponent} />
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
+};
 
 
-const mapStateToProps = (state: ApplicationState) => ({
-    todos: state.todosReducer.data
-})
-
-const mapDispatchToProps = (dispatch: Dispatch) =>
-    bindActionCreators(TodoActions, dispatch)
-
-export default connect(mapStateToProps, mapDispatchToProps)(Root);
+export default Root;
